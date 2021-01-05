@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<section class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="banner-text">
+                    <h1>Users</h1>
+                </div>
+            </div>
+            <div class="row">
+                <% users.forEach(function (user) { %>
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= user.name %></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
+                                <span>ID: <%= user._id %></span>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

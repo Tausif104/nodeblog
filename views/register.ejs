@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<section class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="banner-text">
+                    <h1>Register</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <%- include("./partials/message"); %>
+                <form class="card card-body" action="/register" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" value="<%= typeof email != 'undefined' ? email : '' %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Type Password" value="<%= typeof password != 'undefined' ? password : '' %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="password2">Confirm Password</label>
+                        <input type="password" id="password2" name="password2" class="form-control" placeholder="Retype Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <span class="text-muted mt-3">Already have an account? <a href="/login">Login</a></span>
+                </form>
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
